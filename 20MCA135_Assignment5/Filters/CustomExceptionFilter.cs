@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Net.Http;
 using System.Web;
@@ -31,6 +32,21 @@ namespace _20MCA135_Assignment5.Filters
                 response.ReasonPhrase = "Please try again";
                 actionExecutedContext.Response = response;
             }
+            else if (actionExecutedContext.Exception is DbEntityValidationException)
+            {
+                HttpResponseMessage response = new HttpResponseMessage(System.Net.HttpStatusCode.Forbidden);
+                response.Content = new StringContent("Required Field is missing");
+                response.ReasonPhrase = "Please try again";
+                actionExecutedContext.Response = response;
+            }
+            else if (actionExecutedContext.Exception is invalidinputexception)
+            {
+                HttpResponseMessage response = new HttpResponseMessage(System.Net.HttpStatusCode.NotAcceptable);
+                response.Content = new StringContent("Not a valid input for principal amount");
+                //response.ReasonPhrase = "";
+                actionExecutedContext.Response = response;
+            }
+
 
 
             else

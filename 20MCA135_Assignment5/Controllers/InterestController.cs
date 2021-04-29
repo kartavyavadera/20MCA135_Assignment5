@@ -11,12 +11,15 @@ namespace _20MCA135_Assignment5.Controllers
 {
     public class InterestController : ApiController
     {
-       
+
+        [Authorize]
         public int GetSI(int p,int r,int n)
         {
            if(p<0)
             {
-                throw new IllegalArgumentException();
+                //throw new IllegalArgumentException();
+                throw new invalidinputexception();
+
             }
 
 

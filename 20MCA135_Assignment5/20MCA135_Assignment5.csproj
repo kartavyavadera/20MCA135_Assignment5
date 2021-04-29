@@ -116,8 +116,11 @@
     <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\IllegalArgumentException.cs" />
     <Compile Include="Controllers\InterestController.cs" />
+    <Compile Include="Controllers\invalidinputexception.cs" />
     <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="Filters\Auth.cs" />
     <Compile Include="Filters\CustomExceptionFilter.cs" />
+    <Compile Include="Filters\ExceptionFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -155,6 +158,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\tblStudent.cs">
+      <DependentUpon>StudentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\User.cs">
       <DependentUpon>StudentModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

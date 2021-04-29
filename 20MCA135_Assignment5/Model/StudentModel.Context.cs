@@ -26,5 +26,6 @@ namespace _20MCA135_Assignment5.Model
         }
     
         public virtual DbSet<tblStudent> tblStudents { get; set; }
+        public virtual DbSet<User> Users { get; set; }
     }
 }

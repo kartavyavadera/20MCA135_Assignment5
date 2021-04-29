@@ -18,6 +18,7 @@ namespace _20MCA135_Assignment5
                 defaults: new { id = RouteParameter.Optional }
             );
             config.Filters.Add(new CustomExceptionFilter());
+            //config.Filters.Add(new ExceptionFilter());
 
         }
     }

@@ -14,6 +14,7 @@ namespace _20MCA135_Assignment5.Controllers
     {
         DBBookEntities bdb = new DBBookEntities();
 
+        [Authorize]
         [HttpPost]
         public String InsertBook(tblBook book)
         {

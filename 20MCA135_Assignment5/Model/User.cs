@@ -11,16 +11,11 @@ namespace _20MCA135_Assignment5.Model
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
-    public partial class tblStudent
+    
+    public partial class User
     {
-        public int sid { get; set; }
-        [Required]
-
-        public string sname { get; set; }
-        public string sdegree { get; set; }
-        public string scity { get; set; }
-        public string gender { get; set; }
+        public int u_id { get; set; }
+        public string u_pass { get; set; }
+        public string u_name { get; set; }
     }
 }

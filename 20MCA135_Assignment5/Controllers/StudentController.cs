@@ -1,4 +1,5 @@
-﻿using _20MCA135_Assignment5.Model;
+﻿using _20MCA135_Assignment5.Filters;
+using _20MCA135_Assignment5.Model;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,16 +11,21 @@ using System.Web.Http;
 
 namespace _20MCA135_Assignment5.Controllers
 {
+   
+    [RoutePrefix("Student/")]
+    [ExceptionFilter]
     public class StudentController : ApiController
     {
         StudentdbEntities sdb = new StudentdbEntities();
 
+        [Auth]
+        [Route("insert")] 
         [HttpPost]
         public String PostStudent(tblStudent student)
         {
             
                 sdb.tblStudents.Add(student);
-            String data = "Post Student Data on" + DateTime.Now.ToString();
+            String data = "Insert Student Data on" + DateTime.Now.ToString();
 
                 sdb.SaveChanges();
                 File.AppendAllText(HttpContext.Current.Server.MapPath("~/Log.txt"), data + "\n");
